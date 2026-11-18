@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <title>CV</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Alex's CV">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" href="styles.css">
+        
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #05250A;
+                color: #DEE237;
+            }
+
+            body.light-theme {
+                background-color: #f4f6f4;
+                color: #1b3320;
+            }
+
+            body.dark-theme {
+                background-color: #051a0c;
+                color: #a3e635;
+            }
+        </style>
+
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        
+        <header style="border-bottom: 4px solid #9AC332;">
+            <button id="themeToggleBtn">Змінити тему</button>
+            <h1>ОЛЕКСАНДР КУРАХ</h1>
+            <h2 class="section-title">Особиста інформація</h2>
+            <ul class="contact-info">
+                <li>Адреса: Чорновола 19, Львів</li>
+                <li>Телефон: +380977797744</li>
+                <li>E-mail: <a href="mailto:oleksandr.kurakh.kb.2025@lpnu.ua">oleksandr.kurakh.kb.2025@lpnu.ua</a></li>
+            </ul>
+        </header>
+        
+        <main class="container">
+            <section class="card">
+                <h2 class="section-title">Про себе</h2>
+                <p>Студент старших курсів за напрямом "Кібербезпека" з ґрунтовною теоретичною 
+                та практичною базою в галузі системного аналізу, безпеки веб-додатків та 
+                мережевої інфраструктури. Володію практичними навичками розробки скриптів 
+                автоматизації на Python і C#, проведення статистичного моделювання в R та 
+                дослідження вразливостей. Маю досвід побудови хмарної інфраструктури з AWS та 
+                оптимізації процесів збору й обробки даних. Шукаю позицію спеціаліста з кібербезпеки, 
+                де зможу застосувати аналітичне мислення, вміння працювати з комплексними задачами 
+                та принести вимірну користь проектам компанії.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title">Освіта</h2>
+                <h3 id="education_degree">Бакалавр</h3>
+                <p>Національний університет "Львівська політехніка", 
+                    спеціальність F5 "Кібербезпека", 2025-2029
+                </p>
+            </section>
+            
+            <section class="card">
+                <h2 class="section-title">Вміння</h2>
+                <ul class="skills-list">
+                    <li>Мови: Англійська – B2, Українська – носій</li>
+                    <li>Вміння працювати з Amazon Web Services</li>
+                    <li>Маю нормативно правове забезпечення з кібербезпеки</li>
+                    <li>Вміння проектувати реляційну базу даних</li>
+                    <li>Дружелюбний, легко працюю у команді</li>
+                    <li>Маю хист до лідерства</li>
+                </ul>
+            </section>
+
+            <section class="card", id="comments-container"></section>
+
+            <div id="contactModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span id="closeModalBtn" class="close-btn">&times;</span>
+                    <h2>Зворотний зв'язок</h2>
+    
+                    <form action="https://formspree.io/f/maeelyre" method="POST">
+                        <label for="name">Ім'я:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="phone">Номер телефону:</label>
+                        <input type="tel" id="phone" name="phone" required>
+
+                        <label for="message">Повідомлення:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <button type="submit">Надіслати</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p id="osInfo"></p>
+        </footer>
+    </body>
+</html>

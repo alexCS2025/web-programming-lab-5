@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+header, footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: rgba(154, 195, 50, 0.05);
+}
+
+header h1 {
+    color: #9AC332;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.contact-info {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: rgba(222, 226, 55, 0.05);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    color: #9AC332;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(222, 226, 55, 0.3);
+}
+
+#education_degree {
+    color: #DEE237;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+a[href^="mailto:"] {
+    color: #9AC332;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.7s ease;
+}
+
+a[href^="mailto:"]:hover,
+a[href^="mailto:"]:focus {
+    color: #DEE237;
+    text-decoration: underline;
+}
+
+.skills-list {
+    list-style-type: none;
+}
+
+.skills-list li {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: transform 0.05s ease-in-out;
+}
+
+.skills-list li:nth-child(odd) {
+    background-color: rgba(154, 195, 50, 0.15);
+}
+
+.skills-list li:nth-child(even) {
+    background-color: rgba(222, 226, 55, 0.1);
+}
+
+.skills-list li:active{
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .card {
+        border-left: none;
+        border-top: 5px solid #9AC332;
+        padding: 15px;
+    }
+}
+
+#comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment-card {
+    background-color: rgba(222, 226, 55, 0.05);
+    border: 1px solid rgba(154, 195, 50, 0.2);
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.comment-card:hover {
+    background-color: rgba(222, 226, 55, 0.08);
+    border-color: rgba(154, 195, 50, 0.4);
+}
+
+.comment-card h4 {
+    color: #9AC332;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: capitalize;
+}
+
+.comment-card a {
+    color: #DEE237;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    text-decoration: none;
+    width: fit-content;
+    transition: opacity 0.2s ease, text-decoration 0.2s ease;
+}
+
+.comment-card a:hover,
+.comment-card a:focus {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.comment-card p {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    border-top: 1px dashed rgba(222, 226, 55, 0.15);
+    padding-top: 10px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 37, 10, 0.8); /* Фон #05250A з прозорістю */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #05250A;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid #9AC332;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    color: #DEE237;
+}
+
+/* Кнопка закриття ("хрестик") */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9AC332;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #DEE237;
+}
+
+/* Форма у модальному вікні */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.modal-content label {
+    color: #9AC332;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Поля введення (input, textarea) */
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(222, 226, 55, 0.05);
+    border: 1px solid rgba(154, 195, 50, 0.4);
+    border-radius: 4px;
+    color: #DEE237;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    border-color: #DEE237;
+    background-color: rgba(222, 226, 55, 0.1);
+}
+
+/* Кнопка відправки "Надіслати" */
+.modal-content button[type="submit"] {
+    background-color: rgba(154, 195, 50, 0.2);
+    color: #9AC332;
+    border: 2px solid #9AC332;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover,
+.modal-content button[type="submit"]:focus {
+    background-color: #9AC332;
+    color: #05250A;
+    box-shadow: 0 2px 8px rgba(154, 195, 50, 0.4);
+}
+
+.modal-content button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+#themeToggleBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#themeToggleBtn:hover {
+    transform: translateY(-1px);
+    opacity: 0.8;
+}
+
+#themeToggleBtn:active {
+    transform: scale(0.95);
+}
