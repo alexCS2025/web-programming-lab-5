@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/*  ДЕННИЙ РЕЖИМ */
+:root {
+  --bg-main: #12177E;
+  --bg-header: #1A21A4;
+  --bg-aboutme: #383EB4;
+  --bg-skills: #DAF831;
+  --bg-education: #FF6732;
+  --bg-reviews-card: #12177E;
+
+  --text-main: #ffffff;
+  --text-skills: #12177E;
+  --text-edu-title: #12177E;
+  --text-accent-lime: #DAF831;
+  --text-accent-orange: #FF6732;
+
+  --border-lime: #DAF831;
+  --border-orange: #FF6732;
+  --shadow-lime: #DAF831;
+  --shadow-orange: #FF6732;
+}
+
+.dark {
+  --bg-main: #0B0F19;
+  --bg-header: #111827;
+  --bg-aboutme: #1E293B;
+  --bg-skills: #0F172A;
+  --bg-education: #1E1B4B;
+  --bg-reviews-card: #1E293B;
+
+  --text-main: #E2E8F0;
+  --text-skills: #F8FAFC;
+  --text-edu-title: #A5B4FC;
+  --text-accent-lime: #38BDF8;
+  --text-accent-orange: #818CF8;
+
+  --border-lime: #38BDF8;
+  --border-orange: #6366F1;
+  --shadow-lime: #38BDF8;
+  --shadow-orange: #6366F1;
+}
